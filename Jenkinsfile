@@ -55,7 +55,7 @@ pipeline {
             sh '''
                 echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
 
-                docker push shanmukh092/my-java-app:latest
+                docker push pritham07/my-java-app:latest
             '''
         }
     }
