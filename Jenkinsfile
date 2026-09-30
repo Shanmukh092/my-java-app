@@ -10,7 +10,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'mvn clean package'
-                sh 'echo Hello world iam luffy
+                sh 'echo Hello world iam luffy'
             }
         }
 
@@ -38,6 +38,28 @@ pipeline {
                 }
             }
         }
+	stage('Docker Build') {
+		steps {
+			sh 'docker build -t shanmukh092/my-java-app:latest .'
+		}
+	}
+	stage('Docker Push') {
+	    steps {
+        	withCredentials([
+ 	           usernamePassword(
+               		 credentialsId: 'dockerhub-creds',
+               		 usernameVariable: 'DOCKER_USER',
+               		 passwordVariable: 'DOCKER_PASS'
+            	)
+       	 ]) {
+            sh '''
+                echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
+
+                docker push shanmukh092/my-java-app:latest
+            '''
+        }
+    }
+}
 
     }
 }
