@@ -27,7 +27,7 @@ pipeline {
                         git config user.email "shanmukh@local"
                         git config user.name "Shanmukh"
 
-                        git fetch origin
+                        git fetch origin main:refs/remotes/origin/main feature:refs/remotes/origin/feature
 
                         git checkout -B main origin/main
 
