@@ -40,7 +40,7 @@ pipeline {
         }
 	stage('Docker Build') {
 		steps {
-			sh 'docker build -t shanmukh092/my-java-app:latest .'
+			sh 'docker build -t pritham07/my-java-app:latest .'
 		}
 	}
 	stage('Docker Push') {
