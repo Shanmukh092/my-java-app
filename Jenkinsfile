@@ -33,7 +33,7 @@ pipeline {
 
                         git merge origin/feature --no-edit
 
-                        git push https://${GIT_USER}:${GIT_TOKEN}@github.com/Shanmukh092/python-project-1.git main
+                        git push https://${GIT_USER}:${GIT_TOKEN}@github.com/Shanmukh092/my-java-app.git main
                     '''
                 }
             }
