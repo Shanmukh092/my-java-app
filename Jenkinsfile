@@ -10,7 +10,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'mvn clean package'
-                sh 'echo Hello iam luffy'
+                sh 'echo Hello world iam luffy'
             }
         }
 
