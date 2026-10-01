@@ -1,0 +1,20 @@
+								Mini-Project-1
+
+1.Installed Jenkins,Maven,Docker
+
+2.created a project using maven 
+	cmd :mvn archetype:generate -DgroupId=com.example -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -Dinteractiv        eMode=false
+
+	a.Inside src I written a simple code and pushed on to the git hub and given the Jenkins url as webhook and created a feature branch        and pushed a new code on to it
+
+3.Created a Docker File: used to build the image 
+
+4.created a Jenkins pipeline: When ever the code is committed the pipeline starts
+	a. installed tools Maven with lates version so that Jenkins can perform maven commands	
+	b. intalled git-integratoin-plugin so that Jenkins is notified via git hub webhook
+	c.Given credentials for git hub and docekr hub
+	d. cloning repo
+	e. Using the build tool maven to clean and package the code
+	f. using github credentials so that I can push the code to the github
+	g. Building the docker image and pushing the image to docker hub using docker hub credentials
+
