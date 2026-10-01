@@ -9,8 +9,8 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'mvn clean package -DskipTests'
-                sh 'echo Hello world iam luffy'
+                sh 'mvn clean package '
+                sh 'echo Hello world iam luffy iam going to be king of the pirates'
             }
         }
 
